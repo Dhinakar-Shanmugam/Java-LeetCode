@@ -11,11 +11,11 @@ class Solution {
         map.put('M',1000);
 
         for(int i = 0; i < s.length()-1; i++){
-            if(map.get(s.charAt(i)) < map.get(s.charAt(i+1))){
-                sum -= map.get(s.charAt(i));
+            if(map.get(s.charAt(i)) > map.get(s.charAt(i+1))){
+                sum += map.get(s.charAt(i));
             }
             else{
-                sum += map.get(s.charAt(i));
+                sum -= map.get(s.charAt(i));
             }
         }
 
