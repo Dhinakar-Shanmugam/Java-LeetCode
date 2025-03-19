@@ -1,7 +1,7 @@
 class Solution {
     public int romanToInt(String s) {
         HashMap<Character,Integer> map = new HashMap<>();
-        int res = 0;
+        int sum = 0;
         map.put('I',1);
         map.put('V',5);
         map.put('X',10);
@@ -12,14 +12,14 @@ class Solution {
 
         for(int i = 0; i < s.length()-1; i++){
             if(map.get(s.charAt(i)) < map.get(s.charAt(i+1))){
-                res -= map.get(s.charAt(i));
+                sum -= map.get(s.charAt(i));
             }
             else{
-                res += map.get(s.charAt(i));
+                sum += map.get(s.charAt(i));
             }
         }
 
-        return res + map.get(s.charAt(s.length() - 1));
+        return sum + map.get(s.charAt(s.length() - 1));
     }
 }
 
